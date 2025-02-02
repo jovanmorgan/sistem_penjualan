@@ -14,7 +14,7 @@ php artisan db:seed --class=PenjualanSeeder
 
 6. Lalu Jalankan `php artisan serve` agar api dapat diakses
 
-7. kunjungi url ini untuk menginstall Frontend React nya ""
+7. kunjungi url ini untuk menginstall Frontend React nya "https://github.com/jovanmorgan/frontend-sistem-penjualan.git"
 
 ## API
 | Method | Endpoint | Deskripsi |
