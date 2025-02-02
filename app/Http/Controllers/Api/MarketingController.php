@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,8 +18,8 @@ class MarketingController extends Controller
                 DB::raw("SUM(total_balance) as omzet")
             )
             ->groupBy('marketing.name', 'bulan')
-            ->orderBy('bulan', 'asc')  // Mengurutkan berdasarkan bulan secara ascending
-            ->orderBy('marketing.name', 'asc')  // Mengurutkan berdasarkan nama marketing secara alfabetik
+            ->orderBy('bulan', 'asc')
+            ->orderBy('marketing.name', 'asc')
             ->get();
 
         $hasil = $penjualan->map(function ($item) {
@@ -35,9 +36,13 @@ class MarketingController extends Controller
 
             $komisi_nominal = ($komisi_persen / 100) * $omzet;
 
+            // Konversi format bulan dari YYYY-MM ke "Nama Bulan - Tahun"
+            $bulanFormatted = \Carbon\Carbon::createFromFormat('Y-m', $item->bulan)
+                ->translatedFormat('F - Y');
+
             return [
                 'marketing' => $item->marketing,
-                'bulan' => $item->bulan,
+                'bulan' => $bulanFormatted,
                 'omzet' => $omzet,
                 'komisi_persen' => $komisi_persen,
                 'komisi_nominal' => $komisi_nominal
