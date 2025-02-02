@@ -28,4 +28,4 @@ php artisan db:seed --class=PenjualanSeeder
 2. Gunakan Postman untuk mengirim pembayaran.
 
 ## Postman Collection
-File `Sistem-Penjualan-postman_collection.json` disertakan dalam repo.
+File `Sistem-Penjualan-postman_collection.json` disertakan dalam repo. setelah mengambilnya anda bisa menghapusnya dari fokder laravel
