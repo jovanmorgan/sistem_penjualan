@@ -14,24 +14,7 @@ php artisan db:seed --class=PenjualanSeeder
 
 6. Lalu Jalankan `php artisan serve` agar api dapat diakses
 
-## Instalasi Frontend (React)
-1. Masuk ke folder `frontend-sistem-penjualan`
-2. Jalankan `npm install`
-3. Jalankan `npm run dev`
-
-#Problame 
-1. Jika Frontend react tidak dapat menerima api maka buka config/cors.php
- dan perikasa apakah path api sudah sesuai atau url react pada allowed_origins berbeda contoh :
-
-return [
-    'paths' => ['api/*', 'http://127.0.0.1:8000/komisi'], // Sesuaikan path yang ingin diizinkan CORS
-    'allowed_methods' => ['*'], // Mengizinkan semua metode HTTP
-    'allowed_origins' => ['http://localhost:5173'], // Mengizinkan semua asal permintaan (ubah sesuai url react kamu)
-    'allowed_headers' => ['*'],
-    'exposed_headers' => [],
-    'max_age' => 0,
-    'supports_credentials' => false,
-];
+7. kunjungi untuk menginstall Frontend React nya ""
 
 ## API
 | Method | Endpoint | Deskripsi |
